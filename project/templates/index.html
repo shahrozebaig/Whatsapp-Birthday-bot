@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Birthday Wisher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Animated Background Elements -->
+    <div class="animated-bg">
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+    </div>
+
+    <div class="container">
+        <header class="animated-border">
+            <h1>Birthday Wish Sender</h1>
+            <div class="balloon-container">
+                <div class="balloon balloon-1"></div>
+                <div class="balloon balloon-2"></div>
+                <div class="balloon balloon-3"></div>
+            </div>
+        </header>
+        
+        <main>
+            <form id="birthdayForm" action="/send_wish" method="post" class="animated-border">
+                <div class="form-group">
+                    <label for="name">Birthday Person's Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">WhatsApp Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="With country code (e.g., +1234567890)">
+                </div>
+
+                <div class="form-group">
+                    <label for="template">Choose a Template</label>
+                    <select id="template" name="template">
+                        <option value="template1">Happy Birthday Wishes</option>
+                        <option value="template2">Funny Birthday Greeting</option>
+                        <option value="template3">Inspirational Birthday Message</option>
+                        <option value="template4">Custom Message</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="customMessageContainer" style="display: none;">
+                    <label for="customMessage">Your Custom Message</label>
+                    <textarea id="customMessage" name="customMessage" placeholder="Write your personalized birthday wish..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="sendTime">When to Send</label>
+                    <input type="datetime-local" id="sendTime" name="sendTime">
+                </div>
+
+                <div class="form-group">
+                    <button type="button" id="previewBtn" class="btn preview-btn">Preview Message</button>
+                    <button type="submit" class="btn submit-btn">Schedule Wish</button>
+                </div>
+            </form>
+
+            <div id="previewContainer" class="preview-container animated-border">
+                <h3>Message Preview</h3>
+                <div class="message-preview">
+                    <p id="previewText">Your birthday message will appear here...</p>
+                </div>
+                <button type="button" id="closePreview" class="btn close-btn">Close</button>
+            </div>
+        </main>
+
+        <div id="scheduledWishes" class="scheduled-wishes animated-border">
+            <h2>Scheduled Wishes</h2>
+            <ul id="wishesList">
+                <!-- Scheduled wishes will be displayed here -->
+            </ul>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">
+        <div class="confirmation-content animated-border">
+            <h3>Wish Scheduled! 🎉</h3>
+            <p>Your birthday wish has been scheduled successfully.</p>
+            <div class="confetti">
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+            </div>
+            <button id="confirmationClose" class="btn">Great!</button>
+        </div>
+    </div>
+
+    <footer class="animated-border">
+        <p>Birthday Wish Sender &copy; 2025</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
