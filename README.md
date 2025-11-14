@@ -21,21 +21,37 @@ A beautiful web application that helps you schedule and send birthday wishes via
 - **Styling**: Custom CSS with animations
 - **Database**: JSON file storage
 - **WhatsApp Integration**: PyWhatKit
+  
+---
 
+## Architecture Diagram
+
+
+
+
+
+<img width="1020" height="1445" alt="Screenshot 2025-11-15 040325" src="https://github.com/user-attachments/assets/b5e82e0e-c52f-467b-9ec1-9617e2622c5e" />
+
+
+
+
+
+
+---
 ## 📁 Project Structure
 
 ```
 project/
 ├── 📂 static/
-│   ├── 🎨 style.css      # Styling and animations
-│   └── 📜 script.js      # Frontend functionality
+│   ├── 🎨 style.css      
+│   └── 📜 script.js      
 ├── 📂 templates/
-│   └── 📄 index.html     # Main application template
-├── 📂 venv/              # Python virtual environment
-├── 📄 app.py            # Flask application
-├── 📄 run.py            # Application runner
-├── 📄 requirements.txt  # Python dependencies
-└── 📄 .gitignore       # Git ignore rules
+│   └── 📄 index.html     
+├── 📂 venv/              
+├── 📄 app.py            
+├── 📄 run.py            
+├── 📄 requirements.txt  
+└── 📄 .gitignore       
 ```
 
 ## 🚀 Getting Started
